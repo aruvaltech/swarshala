@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# safety (common typo)
+.enxt/
+
+# lockfiles (keep if you prefer; remove if you want them committed)
+package-lock.json
+yarn.lock
+
+# env files
+
+# misc
+.DS_Store
+.vercel/
+.turbo/

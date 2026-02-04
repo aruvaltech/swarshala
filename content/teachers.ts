@@ -1,0 +1,362 @@
+export interface Teacher {
+    slug: string;
+    name: string;
+    title: string;
+    citySlug: string;
+    instruments: string[];
+    languages: string[];
+    experienceYears: number;
+    rating: number;
+    bio: string;
+    longBio: string;
+    certifications: string[];
+    highlights: string[];
+    availability: string;
+    photoPlaceholder: string;
+    socialLinks?: {
+        youtube?: string;
+        instagram?: string;
+        linkedin?: string;
+    };
+    specializations: string[];
+    teachingStyle: string;
+    metaDescription: string;
+}
+
+export const teachers: Teacher[] = [
+    {
+        slug: 'rajesh-kumar',
+        name: 'Rajesh Kumar',
+        title: 'Senior Guitar Instructor',
+        citySlug: 'delhi',
+        instruments: ['guitar', 'ukulele'],
+        languages: ['Hindi', 'English'],
+        experienceYears: 15,
+        rating: 4.9,
+        bio: 'Rajesh is a seasoned guitarist with 15 years of teaching experience and expertise in acoustic, classical, and electric guitar across genres.',
+        longBio: 'Rajesh Kumar has been teaching guitar for over 15 years, having trained under maestros in Delhi and completed advanced studies in Western classical guitar. His journey began as a self-taught teenage guitarist, which gives him unique insight into common learning challenges. He has performed at numerous venues across Delhi NCR and trained over 500 students, many of whom have gone on to become professional musicians. Rajesh specializes in making complex techniques accessible to beginners while providing advanced students with the challenges they need to grow.',
+        certifications: ['Trinity Grade 8 Guitar', 'Certified Music Educator (CME)', 'RockSchool Performance Certificate'],
+        highlights: [
+            '500+ students trained',
+            '15 years teaching experience',
+            'Trinity certified',
+            'Performed at 100+ venues',
+            'Expert in Bollywood arrangements',
+        ],
+        availability: 'Mon-Sat: 10 AM - 7 PM',
+        photoPlaceholder: '/images/teachers/placeholder-male.jpg',
+        specializations: ['Acoustic Guitar', 'Fingerstyle', 'Bollywood Guitar', 'Classical Guitar'],
+        teachingStyle: 'Patient, methodical, and encouraging. Rajesh believes in building strong foundations while keeping students motivated with songs they love.',
+        metaDescription: 'Learn guitar from Rajesh Kumar at SwarShala Delhi. 15 years experience, Trinity certified, 500+ students trained. Book a free trial!',
+    },
+    {
+        slug: 'priya-sharma',
+        name: 'Priya Sharma',
+        title: 'Classical Piano Instructor',
+        citySlug: 'mumbai',
+        instruments: ['piano', 'keyboard'],
+        languages: ['Hindi', 'English', 'Marathi'],
+        experienceYears: 12,
+        rating: 4.8,
+        bio: 'Priya is an ABRSM-certified piano teacher specializing in Western classical music and exam preparation.',
+        longBio: 'Priya Sharma brings 12 years of dedicated piano teaching to SwarShala Mumbai. Trained at the Trinity College of Music and holding ABRSM Grade 8 with distinction, she has prepared over 100 students for graded examinations with a 95% distinction rate. Her passion for classical music is infectious, and she excels at making Bach, Mozart, and Chopin accessible to students of all ages. Beyond classical, Priya also teaches Bollywood and contemporary piano for students interested in popular music.',
+        certifications: ['ABRSM Grade 8 Piano (Distinction)', 'ABRSM Teaching Diploma', 'Trinity Grade 8 Theory'],
+        highlights: [
+            '100+ students passed ABRSM exams',
+            '95% distinction rate',
+            '12 years experience',
+            'Trained at Trinity College',
+            'Concert pianist',
+        ],
+        availability: 'Mon-Sat: 11 AM - 8 PM',
+        photoPlaceholder: '/images/teachers/placeholder-female.jpg',
+        specializations: ['Classical Piano', 'ABRSM Preparation', 'Music Theory', 'Bollywood Piano'],
+        teachingStyle: 'Structured yet warm. Priya combines rigorous classical training with genuine care for each student\'s musical journey.',
+        metaDescription: 'Learn piano from Priya Sharma at SwarShala Mumbai. ABRSM certified, 95% distinction rate, 12 years experience. Book a free trial!',
+    },
+    {
+        slug: 'arun-nair',
+        name: 'Arun Nair',
+        title: 'Carnatic Violin Master',
+        citySlug: 'chennai',
+        instruments: ['violin', 'veena'],
+        languages: ['Tamil', 'English', 'Hindi', 'Malayalam'],
+        experienceYears: 20,
+        rating: 5.0,
+        bio: 'Arun is a renowned Carnatic violinist with 20 years of teaching and performance experience in South Indian classical music.',
+        longBio: 'Vidwan Arun Nair is among Chennai\'s most respected Carnatic violin teachers with two decades of teaching and performing. A disciple of legendary violinists, he has performed at prestigious sabhas during the December season and accompanied renowned vocalists. Arun\'s teaching integrates traditional guru-shishya methods with modern pedagogical approaches. He has trained numerous students who have gone on to win accolades at inter-school and state-level competitions. His patient, detailed approach ensures students develop authentic Carnatic style.',
+        certifications: ['Sangeet Visharad', 'Carnatic Grade Examinations - Senior', 'All India Radio Graded Artist'],
+        highlights: [
+            'Performed at December Season',
+            'AIR Graded Artist',
+            '20 years teaching',
+            'Trained competition winners',
+            'Accompanied renowned vocalists',
+        ],
+        availability: 'Tue-Sun: 8 AM - 6 PM',
+        photoPlaceholder: '/images/teachers/placeholder-male.jpg',
+        socialLinks: {
+            youtube: 'https://youtube.com/@arunnairviolin',
+        },
+        specializations: ['Carnatic Violin', 'Accompaniment', 'Competition Preparation', 'Western Violin'],
+        teachingStyle: 'Traditional guru-shishya approach with attention to gamaka and authentic style. Patient with beginners, demanding with advanced students.',
+        metaDescription: 'Learn Carnatic violin from Vidwan Arun Nair at SwarShala Chennai. 20 years experience, December season performer. Book a free trial!',
+    },
+    {
+        slug: 'neha-kapoor',
+        name: 'Neha Kapoor',
+        title: 'Western Vocal Coach',
+        citySlug: 'mumbai',
+        instruments: ['vocals-western'],
+        languages: ['Hindi', 'English'],
+        experienceYears: 10,
+        rating: 4.9,
+        bio: 'Neha is a versatile vocal coach specializing in pop, rock, and Bollywood playback singing with industry experience.',
+        longBio: 'Neha Kapoor brings 10 years of vocal coaching experience combined with real industry exposure. She has trained under Bollywood playback singers and worked as a session vocalist for ad films and independent music. Her expertise spans pop, rock, R&B, jazz, and Bollywood styles. Neha\'s students have successfully auditioned for reality shows, recorded in professional studios, and performed at major events. Her teaching focuses on healthy vocal technique while developing each student\'s unique voice.',
+        certifications: ['Rockschool Vocals Grade 8', 'Certified Vocal Technique Instructor', 'Studio Recording Professional'],
+        highlights: [
+            'Industry playback experience',
+            '10 years vocal coaching',
+            'Students in reality shows',
+            'Ad film vocalist',
+            'Multi-genre expertise',
+        ],
+        availability: 'Mon-Fri: 12 PM - 8 PM, Sat: 10 AM - 4 PM',
+        photoPlaceholder: '/images/teachers/placeholder-female.jpg',
+        socialLinks: {
+            instagram: 'https://instagram.com/nehakapoorvocals',
+            youtube: 'https://youtube.com/@nehakapoorvocals',
+        },
+        specializations: ['Pop Vocals', 'Bollywood Playback', 'Vocal Technique', 'Studio Recording'],
+        teachingStyle: 'Energetic and encouraging. Neha pushes students out of comfort zones while ensuring they develop healthy, sustainable technique.',
+        metaDescription: 'Learn singing from Neha Kapoor at SwarShala Mumbai. Industry experience, multi-genre expertise, 10 years coaching. Book a free trial!',
+    },
+    {
+        slug: 'vikram-singh',
+        name: 'Vikram Singh',
+        title: 'Tabla Ustad',
+        citySlug: 'delhi',
+        instruments: ['tabla'],
+        languages: ['Hindi', 'English', 'Punjabi'],
+        experienceYears: 25,
+        rating: 5.0,
+        bio: 'Ustad Vikram Singh is a Delhi gharana tabla master with 25 years of teaching and performing Hindustani classical music.',
+        longBio: 'Ustad Vikram Singh represents the Delhi gharana tradition with 25 years of devoted tabla practice and teaching. Trained under legendary Delhi gharana masters, he has accompanied stalwarts of Hindustani classical music at prestigious concerts. His teaching maintains traditional taleem structure while adapting to modern students\' needs. Vikram ji has produced numerous disciples who are now professional tabla players and teachers themselves. His classes are a journey into the profound depth of Indian classical rhythm.',
+        certifications: ['Sangeet Prabhakar', 'All India Radio A-Grade Artist', 'Prayag Sangeet Samiti Certification'],
+        highlights: [
+            'Delhi gharana lineage',
+            'AIR A-Grade Artist',
+            '25 years experience',
+            'Accompanied classical legends',
+            'Trained professional tabla players',
+        ],
+        availability: 'Daily: 7 AM - 12 PM, 4 PM - 7 PM',
+        photoPlaceholder: '/images/teachers/placeholder-male.jpg',
+        specializations: ['Delhi Gharana Tabla', 'Classical Accompaniment', 'Solo Tabla', 'Taal Theory'],
+        teachingStyle: 'Traditional and disciplined. Vikram ji emphasizes memorization, practice, and understanding the mathematical beauty of taal.',
+        metaDescription: 'Learn tabla from Ustad Vikram Singh at SwarShala Delhi. Delhi gharana, AIR A-Grade Artist, 25 years experience. Book a free trial!',
+    },
+    {
+        slug: 'ananya-reddy',
+        name: 'Ananya Reddy',
+        title: 'Keyboard & Music Production',
+        citySlug: 'hyderabad',
+        instruments: ['keyboard', 'piano'],
+        languages: ['Telugu', 'Hindi', 'English'],
+        experienceYears: 8,
+        rating: 4.7,
+        bio: 'Ananya combines classical keyboard training with modern music production skills for a contemporary approach.',
+        longBio: 'Ananya Reddy represents the new generation of music educators, combining 8 years of keyboard teaching with music production expertise. Trinity-certified and trained in both classical and contemporary styles, she helps students play keyboard while understanding modern music creation. Her classes appeal to students interested in Tollywood music, electronic music, and band performance. Ananya also teaches basic music production using DAWs, bridging traditional keyboard learning with modern technology.',
+        certifications: ['Trinity Grade 8 Keyboard', 'Ableton Certified Trainer', 'Music Production Certificate'],
+        highlights: [
+            '8 years keyboard teaching',
+            'Music production expertise',
+            'Trinity certified',
+            'Tollywood arrangements',
+            'Band coaching experience',
+        ],
+        availability: 'Mon-Sat: 2 PM - 9 PM',
+        photoPlaceholder: '/images/teachers/placeholder-female.jpg',
+        socialLinks: {
+            instagram: 'https://instagram.com/ananyamusickeys',
+        },
+        specializations: ['Keyboard', 'Music Production', 'Tollywood Music', 'Electronic Music'],
+        teachingStyle: 'Modern and tech-savvy. Ananya makes learning fun with technology integration while ensuring solid musical foundations.',
+        metaDescription: 'Learn keyboard and music production from Ananya Reddy at SwarShala Hyderabad. Trinity certified, 8 years experience. Book a free trial!',
+    },
+    {
+        slug: 'sanjay-mehta',
+        name: 'Sanjay Mehta',
+        title: 'Drum Kit Instructor',
+        citySlug: 'bengaluru',
+        instruments: ['drums'],
+        languages: ['Hindi', 'English', 'Kannada'],
+        experienceYears: 14,
+        rating: 4.8,
+        bio: 'Sanjay is a professional drummer with 14 years of live band experience and teaching across rock, jazz, and fusion styles.',
+        longBio: 'Sanjay Mehta brings the energy of 14 years of professional drumming to SwarShala Bangalore. Having performed with numerous rock and jazz bands across India, he brings real-world experience to his teaching. His students range from kids wanting to rock out to professionals seeking jazz sophistication. Sanjay\'s teaching emphasizes groove, feel, and musicality alongside technical development. Many of his students play in active bands around Bangalore.',
+        certifications: ['Rockschool Grade 8 Drums', 'Percussion Certificate - Musicians Institute', 'Professional Performer Certification'],
+        highlights: [
+            'Professional band drummer',
+            '14 years playing and teaching',
+            'Rockschool certified',
+            'Jazz and fusion specialist',
+            'Students in active bands',
+        ],
+        availability: 'Mon-Sat: 10 AM - 8 PM',
+        photoPlaceholder: '/images/teachers/placeholder-male.jpg',
+        socialLinks: {
+            youtube: 'https://youtube.com/@sanjaydrums',
+            instagram: 'https://instagram.com/sanjaymehtadrums',
+        },
+        specializations: ['Rock Drums', 'Jazz Drums', 'Fusion', 'Band Drumming'],
+        teachingStyle: 'High-energy and practical. Sanjay teaches drums the way they\'re meant to be played - with feel, groove, and musical context.',
+        metaDescription: 'Learn drums from Sanjay Mehta at SwarShala Bengaluru. Professional drummer, 14 years experience, rock and jazz specialist. Book a free trial!',
+    },
+    {
+        slug: 'lakshmi-iyer',
+        name: 'Lakshmi Iyer',
+        title: 'Carnatic Vocal Guru',
+        citySlug: 'chennai',
+        instruments: ['vocals-hindustani', 'harmonium'],
+        languages: ['Tamil', 'English', 'Sanskrit'],
+        experienceYears: 22,
+        rating: 5.0,
+        bio: 'Vidushi Lakshmi Iyer is a renowned Carnatic vocalist and guru with 22 years of teaching and concert experience.',
+        longBio: 'Vidushi Lakshmi Iyer is among Chennai\'s most respected Carnatic vocal teachers with 22 years of dedicated teaching and performance. A disciple of legendary vocalists, she has performed at major sabhas and trained hundreds of students in the rich tradition of Carnatic music. Her teaching follows traditional methods while accommodating modern learning needs. Many of her students have won prestigious competitions and some have become professional performers. Lakshmi ji\'s classes are a window into the depth and devotion of Carnatic music.',
+        certifications: ['Sangeet Vidwan', 'All India Radio B-Grade Artist', 'University Gold Medalist - Carnatic Music'],
+        highlights: [
+            'Performed at major sabhas',
+            'AIR graded artist',
+            '22 years teaching',
+            'Trained competition winners',
+            'University gold medalist',
+        ],
+        availability: 'Mon-Sat: 6 AM - 12 PM, 4 PM - 7 PM',
+        photoPlaceholder: '/images/teachers/placeholder-female.jpg',
+        specializations: ['Carnatic Vocals', 'Devotional Music', 'Competition Preparation', 'Music Theory'],
+        teachingStyle: 'Traditional guru-shishya style with emphasis on precision, devotion, and authentic rendering of compositions.',
+        metaDescription: 'Learn Carnatic vocals from Vidushi Lakshmi Iyer at SwarShala Chennai. 22 years experience, AIR artist, renowned guru. Book a free trial!',
+    },
+    {
+        slug: 'amit-chatterjee',
+        name: 'Amit Chatterjee',
+        title: 'Sitar & Indian Classical',
+        citySlug: 'kolkata',
+        instruments: ['sitar', 'guitar'],
+        languages: ['Bengali', 'Hindi', 'English'],
+        experienceYears: 18,
+        rating: 4.9,
+        bio: 'Amit is a sitar virtuoso trained in the Maihar gharana tradition with 18 years of teaching and performing.',
+        longBio: 'Amit Chatterjee carries forward the illustrious Maihar gharana tradition with 18 years of sitar practice and teaching. Trained under disciples of legendary sitarists, he has performed at classical festivals across India and abroad. His teaching honors traditional methods while engaging modern students. Amit also teaches guitar, allowing him to help students interested in both Indian and Western stringed instruments. His sitar classes offer a journey into the meditative depths of Hindustani classical music.',
+        certifications: ['Sangeet Prabhakar - Sitar', 'All India Radio B-Grade Artist', 'Fellowship - Classical Music Academy'],
+        highlights: [
+            'Maihar gharana trained',
+            'International performances',
+            '18 years experience',
+            'AIR graded artist',
+            'Teaches sitar and guitar',
+        ],
+        availability: 'Tue-Sun: 9 AM - 1 PM, 5 PM - 8 PM',
+        photoPlaceholder: '/images/teachers/placeholder-male.jpg',
+        socialLinks: {
+            youtube: 'https://youtube.com/@amitsitar',
+        },
+        specializations: ['Sitar', 'Hindustani Classical', 'Guitar', 'Raag Development'],
+        teachingStyle: 'Deep and contemplative. Amit emphasizes the meditative aspects of classical music while building solid technique.',
+        metaDescription: 'Learn sitar from Amit Chatterjee at SwarShala Kolkata. Maihar gharana, 18 years experience, international performer. Book a free trial!',
+    },
+    {
+        slug: 'meera-joshi',
+        name: 'Meera Joshi',
+        title: 'Flute & Wind Instruments',
+        citySlug: 'pune',
+        instruments: ['flute', 'saxophone'],
+        languages: ['Marathi', 'Hindi', 'English'],
+        experienceYears: 11,
+        rating: 4.8,
+        bio: 'Meera teaches both Western concert flute and Indian bansuri with 11 years of experience across classical and contemporary styles.',
+        longBio: 'Meera Joshi offers unique expertise in both Western concert flute and Indian bansuri, having studied under masters of both traditions over 11 years. Her Western training includes ABRSM certification, while her bansuri skills come from learning under renowned players. This dual expertise allows her to guide students toward either tradition or help them explore both. Meera\'s calm, patient teaching style suits the meditative nature of flute playing.',
+        certifications: ['ABRSM Grade 8 Flute', 'Indian Bansuri Certificate', 'Music Therapy Practitioner'],
+        highlights: [
+            'Dual tradition expertise',
+            'ABRSM certified',
+            '11 years teaching',
+            'Music therapy trained',
+            'Concert performer',
+        ],
+        availability: 'Mon-Sat: 11 AM - 7 PM',
+        photoPlaceholder: '/images/teachers/placeholder-female.jpg',
+        specializations: ['Western Flute', 'Bansuri', 'Music Therapy', 'Meditation Music'],
+        teachingStyle: 'Calm and nurturing. Meera creates a peaceful learning environment that complements the meditative nature of flute.',
+        metaDescription: 'Learn flute (Western & bansuri) from Meera Joshi at SwarShala Pune. ABRSM certified, 11 years experience. Book a free trial!',
+    },
+    {
+        slug: 'rohit-agarwal',
+        name: 'Rohit Agarwal',
+        title: 'Guitar & Contemporary Music',
+        citySlug: 'bengaluru',
+        instruments: ['guitar', 'ukulele'],
+        languages: ['Hindi', 'English', 'Kannada'],
+        experienceYears: 9,
+        rating: 4.7,
+        bio: 'Rohit specializes in contemporary guitar styles including rock, blues, and fingerstyle with studio recording experience.',
+        longBio: 'Rohit Agarwal represents the contemporary guitar teaching at SwarShala Bangalore. With 9 years of teaching and active gigging experience, he specializes in rock, blues, pop, and fingerstyle guitar. Having worked in recording studios and performed with bands, Rohit brings real-world perspective to his teaching. He\'s particularly skilled at helping aspiring guitarists find their sound and style. His classes are energetic and focused on playing music students love.',
+        certifications: ['Rockschool Grade 8 Guitar', 'Studio Guitar Certificate', 'Music Business Certificate'],
+        highlights: [
+            'Active gigging musician',
+            'Studio recording experience',
+            '9 years teaching',
+            'Rock and blues specialist',
+            'Band coaching',
+        ],
+        availability: 'Mon-Sat: 1 PM - 9 PM',
+        photoPlaceholder: '/images/teachers/placeholder-male.jpg',
+        socialLinks: {
+            instagram: 'https://instagram.com/rohitrocksguitar',
+            youtube: 'https://youtube.com/@rohitrocksguitar',
+        },
+        specializations: ['Electric Guitar', 'Rock Guitar', 'Blues Guitar', 'Fingerstyle'],
+        teachingStyle: 'Fun and practical. Rohit focuses on getting students playing songs they love while building solid technique.',
+        metaDescription: 'Learn guitar from Rohit Agarwal at SwarShala Bengaluru. Rock, blues, fingerstyle specialist, 9 years experience. Book a free trial!',
+    },
+    {
+        slug: 'divya-menon',
+        name: 'Divya Menon',
+        title: 'Hindustani Vocal & Light Music',
+        citySlug: 'kochi',
+        instruments: ['vocals-hindustani', 'harmonium'],
+        languages: ['Malayalam', 'Hindi', 'English', 'Tamil'],
+        experienceYears: 13,
+        rating: 4.9,
+        bio: 'Divya specializes in Hindustani light classical, ghazals, and devotional music with 13 years of teaching and performing.',
+        longBio: 'Divya Menon brings 13 years of Hindustani vocal expertise to SwarShala Kochi. While trained in classical fundamentals, she specializes in light classical forms - ghazals, thumri, bhajans, and devotional music that resonate deeply with Kerala\'s diverse population. Her multi-lingual abilities allow her to teach in Malayalam, Hindi, Tamil, and English. Divya\'s warm voice and patient teaching have made her a favorite among students seeking soulful music education.',
+        certifications: ['Sangeet Visharad', 'Ghazal Performance Certificate', 'Music Therapy Basics'],
+        highlights: [
+            'Light classical specialist',
+            '13 years teaching',
+            'Multi-lingual',
+            'Ghazal performer',
+            'Devotional music expert',
+        ],
+        availability: 'Mon-Sat: 10 AM - 6 PM',
+        photoPlaceholder: '/images/teachers/placeholder-female.jpg',
+        specializations: ['Hindustani Vocals', 'Ghazals', 'Bhajans', 'Light Classical'],
+        teachingStyle: 'Warm and soulful. Divya emphasizes expression and emotion in music while building classical foundations.',
+        metaDescription: 'Learn Hindustani vocals and ghazals from Divya Menon at SwarShala Kochi. 13 years experience, light classical specialist. Book a free trial!',
+    },
+];
+
+export function getTeacherBySlug(slug: string): Teacher | undefined {
+    return teachers.find((teacher) => teacher.slug === slug);
+}
+
+export function getTeachersByCity(citySlug: string): Teacher[] {
+    return teachers.filter((teacher) => teacher.citySlug === citySlug);
+}
+
+export function getTeachersByInstrument(instrumentSlug: string): Teacher[] {
+    return teachers.filter((teacher) => teacher.instruments.includes(instrumentSlug));
+}
+
+export const teacherSlugs = teachers.map((teacher) => teacher.slug);

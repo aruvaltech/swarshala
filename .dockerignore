@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# build outputs
+.next
+out
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# VCS
+.git
+.github
+
+# editor
+.vscode
