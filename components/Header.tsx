@@ -39,7 +39,7 @@ const navItems = [
       { label: "View All Cities", href: "/cities" },
     ],
   },
-  { label: "Teachers", href: "/teachers" },
+  // { label: "Teachers", href: "/teachers" },
   { label: "Pricing", href: "/pricing" },
   { label: "Resources", href: "/resources" },
 ];
