@@ -25,8 +25,14 @@ export const brandColors = {
   white: "#ffffff",
 };
 
-// Navbar logo - optimized for header use (light background)
-export function NavbarLogo({ className }: { className?: string }) {
+// Navbar logo - optimized for header use
+export function NavbarLogo({
+  className,
+  theme,
+}: {
+  className?: string;
+  theme?: "light" | "dark";
+}) {
   return (
     <Image
       src="/navbar-logo.svg"
