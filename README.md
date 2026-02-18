@@ -414,13 +414,10 @@ This project is proprietary software owned by SwarShala.
 
 For technical support:
 - Email: tech@swarshala.com
-- Phone: +91 88827 25239
+- Phone: +91 85950 25239
 
 ---
 
 Built with ❤️ by SwarShala Engineering Team
 # swarshala
-<<<<<<< HEAD
 # swarshala
-=======
->>>>>>> 2a409e8d8856b0861c88d07ecc74374303963a22

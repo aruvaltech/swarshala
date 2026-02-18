@@ -209,7 +209,7 @@ export default function BookTrialPage() {
                       value={formData.phone}
                       onChange={(e) => handleChange("phone", e.target.value)}
                       error={errors.phone}
-                      placeholder="+91 88827 25239"
+                      placeholder="+91 85950 25239"
                       required
                     />
                   </div>
@@ -398,7 +398,7 @@ export default function BookTrialPage() {
                 href="tel:+919876543210"
                 className="flex items-center gap-2 text-gold font-semibold hover:underline"
               >
-                📞 +91 88827 25239
+                📞 +91 85950 25239
               </a>
             </Card>
           </div>

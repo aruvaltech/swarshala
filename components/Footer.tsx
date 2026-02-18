@@ -5,6 +5,7 @@ import {
   CONTACT_EMAIL,
   SOCIAL_LINKS,
 } from "@/lib/utils";
+import { FooterLogo } from "@/components/Logo";
 
 const footerLinks = {
   "Learn Music": [
@@ -116,9 +117,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-serif font-bold">
-                Swar<span className="text-gold">Shala</span>
-              </span>
+              <FooterLogo />
             </Link>
             <p className="mt-4 text-sm text-gray-400 leading-relaxed">
               India&apos;s premier music academy offering expert training in

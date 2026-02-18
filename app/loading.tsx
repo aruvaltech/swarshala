@@ -1,7 +1,15 @@
+import { LogoIconGold } from "@/components/Logo";
+
 export default function Loading() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
       <div className="text-center">
+        {/* Logo icon with pulse animation */}
+        <div className="flex justify-center mb-6">
+          <div className="animate-pulse">
+            <LogoIconGold size="lg" />
+          </div>
+        </div>
         {/* Animated music note loader */}
         <div className="flex justify-center items-end gap-1 mb-4">
           <div

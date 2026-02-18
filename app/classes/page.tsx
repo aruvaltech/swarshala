@@ -70,7 +70,14 @@ export default function ClassesPage() {
             >
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
                 <div className="aspect-video relative rounded-xl overflow-hidden bg-surface-muted flex items-center justify-center">
-                  <span className="text-8xl">{program.icon}</span>
+                  {/* <span className="text-8xl">{program.icon}</span> */}
+                  <Image
+                    src={`./images/classes/${program.icon}.svg`}
+                    alt={program.name}
+                    fill
+                    className="object-cover "
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
               </div>
               <div className={index % 2 === 1 ? "md:order-1" : ""}>

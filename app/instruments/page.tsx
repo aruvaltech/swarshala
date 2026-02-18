@@ -58,7 +58,7 @@ export default function InstrumentsPage() {
               <Card padding="none" className="overflow-hidden h-full">
                 <div className="aspect-video relative bg-surface-muted">
                   <Image
-                    src={`/images/instruments/${instrument.imageSlug}.jpg`}
+                    src={`/images/instruments/${instrument.imageSlug}.svg`}
                     alt={instrument.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

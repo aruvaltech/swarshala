@@ -301,8 +301,8 @@ export const SITE_URL = 'https://swarshala.com';
 export const SITE_TAGLINE = 'India\'s Premier Music Academy';
 export const SITE_DESCRIPTION =
     'Learn music from expert teachers. Piano, Guitar, Vocals, Tabla & more. Online classes, home tutors & academy centers across India.';
-export const CONTACT_PHONE = '+91 88827 25239';
-export const CONTACT_EMAIL = 'swarshala@aruvalai.io';
+export const CONTACT_PHONE = '+91 85950 25239';
+export const CONTACT_EMAIL = 'contact@swarshala.com';
 export const CONTACT_ADDRESS = 'SwarShala Music Academy, Connaught Place, New Delhi 110001, India';
 
 /**

@@ -196,12 +196,12 @@ export default function HomePage() {
               className="group"
             >
               <Card padding="none" className="overflow-hidden">
-                <div className="aspect-video relative bg-surface-muted">
+                <div className="aspect-square relative bg-surface-muted p-4">
                   <Image
-                    src={`/images/instruments/${instrument.imageSlug}.jpg`}
+                    src={`/images/instruments/${instrument.imageSlug}.svg`}
                     alt={instrument.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
@@ -292,12 +292,12 @@ export default function HomePage() {
               Book Free Trial Class
             </LinkButton>
             <LinkButton
-              href="tel:+919876543210"
+              href="tel:+918595025239"
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-midnight"
             >
-              Call Us: +91 88827 25239
+              Call Us: +91 85950 25239
             </LinkButton>
           </div>
         </div>

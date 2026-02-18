@@ -1,0 +1,27 @@
+{
+  "name": "SwarShala Music Academy",
+  "short_name": "SwarShala",
+  "description": "India's premier music academy offering expert training in classical and contemporary music.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1C2D",
+  "theme_color": "#c9a84c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

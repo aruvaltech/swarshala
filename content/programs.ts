@@ -88,7 +88,7 @@ export const programs: Program[] = [
             { question: 'Are private classes available online?', answer: 'Absolutely! Many students prefer online 1:1 classes for convenience. The personalized attention works excellently via video.' },
         ],
         popular: true,
-        icon: 'user',
+        icon: 'one-on-one',
         metaDescription: 'Private one-to-one music classes at SwarShala. Personalized instruction for all instruments and levels. Expert teachers, flexible timing. Book a free trial!',
     },
     {
@@ -153,7 +153,7 @@ export const programs: Program[] = [
             { question: 'What happens if I miss a group class?', answer: 'You can attend a make-up session in another batch of the same level, subject to availability.' },
         ],
         popular: true,
-        icon: 'users',
+        icon: 'group',
         metaDescription: 'Affordable group music classes at SwarShala. Learn with peers in small batches. Expert instruction, social learning, all instruments. Book a free trial!',
     },
     {
@@ -224,7 +224,7 @@ export const programs: Program[] = [
             { question: 'Is home tutoring more expensive?', answer: 'Home tutoring has a premium over center classes to cover teacher travel. The convenience often makes it worthwhile for many families.' },
         ],
         popular: true,
-        icon: 'home',
+        icon: 'globe',
         metaDescription: 'Home music tutor services by SwarShala. Verified teachers come to your home across major Indian cities. All instruments, all levels. Book a free trial!',
     },
     {
