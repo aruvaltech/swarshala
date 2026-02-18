@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { NavbarLogo } from "@/components/Logo";
 
 const navItems = [
   {
@@ -57,9 +58,7 @@ export default function Header() {
             className="flex items-center gap-2"
             aria-label="SwarShala Home"
           >
-            <span className="text-2xl font-serif font-bold text-midnight">
-              Swar<span className="text-gold">Shala</span>
-            </span>
+            <NavbarLogo theme="light" />
           </Link>
 
           {/* Desktop Navigation */}

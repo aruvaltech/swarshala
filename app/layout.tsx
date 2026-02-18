@@ -51,10 +51,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Facebook Domain Verification */}
+        <meta
+          name="facebook-domain-verification"
+          content="ggmf3ysg3wnexxyhqslalkj93ja6ch"
+        />
 
         {/* Global Schema */}
         <Schema schema={generateOrganizationSchema()} />

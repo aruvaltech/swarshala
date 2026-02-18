@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { Section, LinkButton } from "@/components/ui";
+import { LogoIconGold } from "@/components/Logo";
 
 export default function NotFound() {
   return (
     <Section className="min-h-[60vh] flex items-center">
       <div className="text-center max-w-2xl mx-auto">
-        <div className="text-8xl mb-6">🎵</div>
+        <div className="mb-6 flex justify-center">
+          <LogoIconGold size="lg" className="opacity-50" />
+        </div>
         <h1 className="text-4xl font-bold font-serif text-midnight mb-4">
           Page Not Found
         </h1>

@@ -67,8 +67,8 @@ This site includes JSON-LD structured data for:
 - Article (for blog posts)
 
 ## Contact Information
-- Phone: +91 88827 25239
-- Email: swarshala@aruvalai.io
+- Phone: +91 85950 25239
+- Email: contact@swarshala.com
 - Address: SwarShala Music Academy, Connaught Place, New Delhi 110001, India
 
 ## Social Media

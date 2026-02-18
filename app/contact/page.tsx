@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact Us - Get in Touch | SwarShala",
   description:
-    "Contact SwarShala for music class inquiries. Call +91 88827 25239, email swarshala@aruvalai.io, or visit our centers. We respond within 2 hours.",
+    "Contact SwarShala for music class inquiries. Call +91 85950 25239, email contact@swarshala.com, or visit our centers. We respond within 2 hours.",
   alternates: {
     canonical: "https://swarshala.com/contact",
   },
@@ -53,8 +53,8 @@ const contactMethods = [
     icon: "💬",
     title: "WhatsApp",
     description: "Quick responses",
-    value: "+91 88827 25239",
-    href: "https://wa.me/919876543210",
+    value: "+91 85950 25239",
+    href: "https://wa.me/918595025239",
     action: "Chat Now",
   },
   {

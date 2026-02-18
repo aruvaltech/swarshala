@@ -33,7 +33,7 @@ export function generateMetadata({
 }: SEOConfig): Metadata {
     const url = `${SITE_URL}${path}`;
     const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : url;
-    const imageUrl = image ? `${SITE_URL}${image}` : `${SITE_URL}/images/og-default.jpg`;
+    const imageUrl = image ? `${SITE_URL}${image}` : `${SITE_URL}/og-image.png`;
 
     const metadata: Metadata = {
         title: `${title} | ${SITE_NAME}`,

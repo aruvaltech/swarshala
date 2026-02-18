@@ -96,10 +96,10 @@ export default async function InstrumentPage({ params }: Props) {
           <div>
             <div className="aspect-video relative rounded-xl overflow-hidden bg-surface-muted mb-6">
               <Image
-                src={`/images/instruments/${instrument.imageSlug}.jpg`}
+                src={`/images/instruments/${instrument.imageSlug}.svg`}
                 alt={instrument.name}
                 fill
-                className="object-cover"
+                className="object-contain group-hover:scale-105 transition-transform duration-300"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
@@ -317,7 +317,7 @@ export default async function InstrumentPage({ params }: Props) {
                 >
                   <div className="aspect-video relative bg-surface-muted">
                     <Image
-                      src={`/images/instruments/${inst.imageSlug}.jpg`}
+                      src={`/images/instruments/${inst.imageSlug}.svg`}
                       alt={inst.name}
                       fill
                       className="object-cover"

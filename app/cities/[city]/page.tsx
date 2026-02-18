@@ -203,10 +203,10 @@ export default async function CityPage({ params }: Props) {
               >
                 <div className="aspect-video relative bg-surface-muted">
                   <Image
-                    src={`/images/instruments/${instrument.imageSlug}.jpg`}
+                    src={`/images/instruments/${instrument.imageSlug}.svg`}
                     alt={`${instrument.name} classes in ${city.name}`}
                     fill
-                    className="object-cover"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader, Section, Breadcrumbs } from "@/components/ui";
-import { SITE_NAME, CONTACT_EMAIL } from "@/lib/utils";
+import { SITE_NAME, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SwarShala",
@@ -212,7 +212,7 @@ export default function PrivacyPage() {
             <li>
               Address: 123 Music Lane, Connaught Place, New Delhi - 110001
             </li>
-            <li>Phone: +91 88827 25239</li>
+            <li>Phone: <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}>{CONTACT_PHONE}</a></li>
           </ul>
         </div>
       </Section>
