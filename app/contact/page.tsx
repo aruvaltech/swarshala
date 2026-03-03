@@ -7,7 +7,7 @@ import {
   Breadcrumbs,
   FAQSection,
 } from "@/components/ui";
-import { Input, Textarea } from "@/components/ui/Form";
+import ContactForm from "@/components/ContactForm";
 import { globalFaqs, getFAQsByCategory } from "@/content/faqs";
 import {
   CONTACT_PHONE,
@@ -108,33 +108,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold font-serif text-midnight mb-6">
               Send Us a Message
             </h2>
-            <Card padding="lg">
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <Input label="Your Name" name="name" required />
-                  <Input label="Phone Number" name="phone" type="tel" />
-                </div>
-                <Input
-                  label="Email Address"
-                  name="email"
-                  type="email"
-                  required
-                />
-                <Input label="Subject" name="subject" required />
-                <Textarea
-                  label="Your Message"
-                  name="message"
-                  rows={5}
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </Card>
+            <ContactForm />
           </div>
 
           {/* Office Info */}
