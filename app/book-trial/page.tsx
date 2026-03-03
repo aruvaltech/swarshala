@@ -111,10 +111,25 @@ export default function BookTrialPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/leads", {
+      // Map frontend form fields to backend lead schema
+      const apiPayload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        instrument: formData.instrument,
+        courseInterest: `${formData.instrument} - ${formData.level} (${formData.mode})`,
+        preferredTime: formData.preferredTime || undefined,
+        message: formData.message || undefined,
+        source: "WEBSITE_TRIAL",
+      };
+
+      const apiUrl =
+        process.env.NEXT_PUBLIC_API_URL || "https://api.swarshala.com";
+      const response = await fetch(`${apiUrl}/api/v1/public/swarshala/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(apiPayload),
       });
 
       if (response.ok) {
