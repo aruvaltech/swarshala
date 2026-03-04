@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "deploy": "gcloud run deploy swarshala --source . --region asia-south2 --project web-landing-484909 --allow-unauthenticated"
+    "deploy": "cd .. && ./deploy.sh frontend"
   },
   "dependencies": {
     "next": "16.1.6",
