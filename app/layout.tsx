@@ -9,6 +9,7 @@ import { Schema } from "@/components/Schema";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
+  generateEducationalOrganizationSchema,
 } from "@/lib/schema";
 import { defaultMetadata } from "@/lib/seo";
 import { GA_MEASUREMENT_ID } from "@/lib/gtag";
@@ -50,6 +51,10 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
+        {/* DNS Prefetch for third-party domains */}
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -65,6 +70,7 @@ export default function RootLayout({
         {/* Global Schema */}
         <Schema schema={generateOrganizationSchema()} />
         <Schema schema={generateWebSiteSchema()} />
+        <Schema schema={generateEducationalOrganizationSchema()} />
 
         {/* Google Analytics 4 - Shared Aruvalai property */}
         <Script

@@ -13,7 +13,23 @@ export default function robots(): MetadataRoute.Robots {
                     '/admin/',
                     '/_next/',
                     '/private/',
+                    '/api/private/',
+                    '/dashboard/',
+                    '/onboarding/',
+                    '/callback/',
+                    '/login/',
+                    '/signup/',
+                    '/forgot-password/',
                 ],
+            },
+            {
+                userAgent: 'Googlebot',
+                allow: '/',
+                disallow: ['/api/', '/admin/', '/private/'],
+            },
+            {
+                userAgent: 'Googlebot-Image',
+                allow: ['/images/', '/public/'],
             },
             {
                 userAgent: 'GPTBot',
@@ -34,6 +50,24 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: 'Google-Extended',
                 allow: '/',
+            },
+            {
+                userAgent: 'Bingbot',
+                allow: '/',
+                disallow: ['/api/', '/admin/', '/private/'],
+            },
+            // Block bad bots
+            {
+                userAgent: 'AhrefsBot',
+                disallow: ['/'],
+            },
+            {
+                userAgent: 'SemrushBot',
+                disallow: ['/'],
+            },
+            {
+                userAgent: 'MJ12bot',
+                disallow: ['/'],
             },
         ],
         sitemap: `${baseUrl}/sitemap.xml`,
