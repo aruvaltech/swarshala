@@ -10,8 +10,10 @@ import {
 } from "@/components/ui";
 import { Schema } from "@/components/Schema";
 import { blogPosts } from "@/content/blog";
-import { generateArticleSchema } from "@/lib/schema";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { formatDate, readingTime, SITE_URL } from "@/lib/utils";
+import { getRelatedProductLinks } from "@/lib/internal-links";
+import { RelatedLinks } from "@/components/InternalLinks";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -82,6 +84,13 @@ export default async function BlogPostPage({ params }: Props) {
     tags: post.tags,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    breadcrumbs.map((b) => ({ name: b.name, path: b.href })),
+  );
+
+  // Get internal links to product pages related to this blog post's tags
+  const productLinks = getRelatedProductLinks(post.tags, 4);
+
   // Placeholder content since we don't have MDX files yet
   const placeholderContent = `
     <p class="lead">${post.excerpt}</p>
@@ -111,6 +120,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <Schema schema={articleSchema} />
+      <Schema schema={breadcrumbSchema} />
 
       <article>
         <PageHeader
@@ -190,6 +200,29 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               </div>
             </Card>
+
+            {/* Tags with links */}
+            <div className="mt-8 flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <Link
+                  key={tag}
+                  href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="px-3 py-1 bg-surface-muted text-text-muted text-sm rounded-full hover:bg-gold/10 hover:text-gold transition-colors"
+                >
+                  #{tag}
+                </Link>
+              ))}
+            </div>
+
+            {/* Internal links to product pages */}
+            {productLinks.length > 0 && (
+              <div className="mt-8">
+                <RelatedLinks
+                  links={productLinks}
+                  title="Explore Related Programs"
+                />
+              </div>
+            )}
           </div>
         </Section>
       </article>

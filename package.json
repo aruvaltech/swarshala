@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "deploy": "cd .. && ./deploy.sh frontend"
+    "deploy": "cd .. && ./deploy.sh frontend",
+    "list:web-search": "bash scripts/list-indexed-pages.sh",
+    "index:web-search": "bash scripts/submit-to-google.sh"
   },
   "dependencies": {
     "next": "16.1.6",

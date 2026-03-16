@@ -4,7 +4,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://swarshala.com';
 export function generateOrganizationSchema() {
     return {
         '@context': 'https://schema.org',
-        '@type': 'Organization',
+        '@type': ['Organization', 'EducationalOrganization'],
         '@id': `${SITE_URL}/#organization`,
         name: 'SwarShala',
         alternateName: 'SwarShala Music Academy',
@@ -78,6 +78,41 @@ export function generateOrganizationSchema() {
             'Hindustani Classical Music',
             'Carnatic Music',
             'Western Classical Music',
+        ],
+        // EducationalOrganization-specific properties
+        hasCredential: {
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'Music Certification',
+            name: 'SwarShala Certified Musician',
+        },
+    };
+}
+
+// EducationalOrganization Schema (standalone for pages needing it)
+export function generateEducationalOrganizationSchema() {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'EducationalOrganization',
+        '@id': `${SITE_URL}/#educationalOrganization`,
+        name: 'SwarShala Music Academy',
+        url: SITE_URL,
+        description: 'India\'s premier music education platform offering structured learning programs for all ages and skill levels.',
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'New Delhi',
+            addressRegion: 'Delhi',
+            addressCountry: 'IN',
+        },
+        alumni: [],
+        areaServed: {
+            '@type': 'Country',
+            name: 'India',
+        },
+        department: [
+            { '@type': 'EducationalOrganization', name: 'Guitar Department' },
+            { '@type': 'EducationalOrganization', name: 'Piano Department' },
+            { '@type': 'EducationalOrganization', name: 'Vocal Department' },
+            { '@type': 'EducationalOrganization', name: 'Indian Classical Department' },
         ],
     };
 }
@@ -449,6 +484,206 @@ export function generateServiceAreaSchema(city: {
         serviceArea: city.serviceAreas.map((area) => ({
             '@type': 'Place',
             name: `${area}, ${city.name}`,
+        })),
+    };
+}
+
+// VideoObject Schema for embedded videos
+export function generateVideoSchema(video: {
+    name: string;
+    description: string;
+    thumbnailUrl: string;
+    uploadDate: string;
+    duration?: string;
+    embedUrl?: string;
+    contentUrl?: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: video.name,
+        description: video.description,
+        thumbnailUrl: video.thumbnailUrl,
+        uploadDate: video.uploadDate,
+        duration: video.duration || 'PT5M',
+        embedUrl: video.embedUrl,
+        contentUrl: video.contentUrl,
+        publisher: {
+            '@id': `${SITE_URL}/#organization`,
+        },
+    };
+}
+
+// ItemList Schema for collection pages (instruments, cities, teachers)
+export function generateItemListSchema(items: {
+    name: string;
+    url: string;
+    image?: string;
+    description?: string;
+}[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            url: `${SITE_URL}${item.url}`,
+            ...(item.image && { image: `${SITE_URL}${item.image}` }),
+            ...(item.description && { description: item.description }),
+        })),
+    };
+}
+
+// HowTo Schema for tutorial-style blog posts
+export function generateHowToSchema(howTo: {
+    name: string;
+    description: string;
+    totalTime?: string;
+    steps: { name: string; text: string; image?: string }[];
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: howTo.name,
+        description: howTo.description,
+        totalTime: howTo.totalTime || 'PT30M',
+        step: howTo.steps.map((step, index) => ({
+            '@type': 'HowToStep',
+            position: index + 1,
+            name: step.name,
+            text: step.text,
+            ...(step.image && {
+                image: {
+                    '@type': 'ImageObject',
+                    url: `${SITE_URL}${step.image}`,
+                },
+            }),
+        })),
+    };
+}
+
+// Event Schema for workshops/masterclasses
+export function generateEventSchema(event: {
+    name: string;
+    description: string;
+    startDate: string;
+    endDate?: string;
+    location?: string;
+    isOnline?: boolean;
+    price?: number;
+    url?: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Event',
+        name: event.name,
+        description: event.description,
+        startDate: event.startDate,
+        endDate: event.endDate || event.startDate,
+        eventAttendanceMode: event.isOnline
+            ? 'https://schema.org/OnlineEventAttendanceMode'
+            : 'https://schema.org/OfflineEventAttendanceMode',
+        eventStatus: 'https://schema.org/EventScheduled',
+        location: event.isOnline
+            ? {
+                '@type': 'VirtualLocation',
+                url: event.url || SITE_URL,
+            }
+            : {
+                '@type': 'Place',
+                name: event.location || 'SwarShala Music Academy',
+                address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'New Delhi',
+                    addressCountry: 'IN',
+                },
+            },
+        organizer: {
+            '@id': `${SITE_URL}/#organization`,
+        },
+        offers: {
+            '@type': 'Offer',
+            price: event.price || 0,
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+            url: event.url || `${SITE_URL}/book-trial`,
+        },
+    };
+}
+
+// Programmatic SEO page schema for music-classes-{city} pages
+export function generateMusicClassesCitySchema(city: {
+    name: string;
+    slug: string;
+    state: string;
+    instruments: string[];
+    nearbyAreas: string[];
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_URL}/music-classes-${city.slug}/#service`,
+        name: `Music Classes in ${city.name}`,
+        description: `Premium music education services in ${city.name}, ${city.state}. Learn guitar, piano, vocals & more.`,
+        provider: {
+            '@id': `${SITE_URL}/#organization`,
+        },
+        serviceType: 'Music Education',
+        areaServed: {
+            '@type': 'City',
+            name: city.name,
+            containedInPlace: {
+                '@type': 'State',
+                name: city.state,
+            },
+        },
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: `Music Classes in ${city.name}`,
+            itemListElement: city.instruments.map((instrument) => ({
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: `${instrument.charAt(0).toUpperCase() + instrument.slice(1)} Classes in ${city.name}`,
+                },
+            })),
+        },
+        serviceArea: city.nearbyAreas.map((area) => ({
+            '@type': 'Place',
+            name: `${area}, ${city.name}`,
+        })),
+    };
+}
+
+// Review Schema for testimonials
+export function generateReviewSchema(reviews: {
+    author: string;
+    rating: number;
+    text: string;
+    date: string;
+}[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'SwarShala Music Classes',
+        aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1),
+            reviewCount: reviews.length,
+            bestRating: 5,
+            worstRating: 1,
+        },
+        review: reviews.map((review) => ({
+            '@type': 'Review',
+            author: { '@type': 'Person', name: review.author },
+            datePublished: review.date,
+            reviewRating: {
+                '@type': 'Rating',
+                ratingValue: review.rating,
+                bestRating: 5,
+            },
+            reviewBody: review.text,
         })),
     };
 }
