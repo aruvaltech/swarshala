@@ -14,7 +14,7 @@
     "index:web-search": "bash scripts/submit-to-google.sh"
   },
   "dependencies": {
-    "next": "16.1.6",
+    "next": "16.2.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@next/mdx": "^15.1.0",
