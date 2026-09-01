@@ -113,7 +113,7 @@ submit_url() {
 
 while IFS= read -r url; do
   [ -z "$url" ] && continue
-  submit_url "$url"
+  submit_url "$url" || true
   sleep "$SLEEP_TIME"
 done <<< "$URLS"
 

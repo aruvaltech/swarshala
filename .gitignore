@@ -13,6 +13,9 @@ package-lock.json
 yarn.lock
 
 # env files
+.env
+.env.local
+.env.*.local
 
 # misc
 .DS_Store

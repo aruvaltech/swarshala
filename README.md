@@ -220,15 +220,13 @@ npm run start
 npm run lint
 ```
 
-<<<<<<< HEAD
-## ☁️ Deploy (Google Cloud Run)
+## ▲ Deploy (Vercel)
 
-- Docker build steps are intentionally simple: `npm install` → `npm run build` → `npm run start`.
-- GitHub Actions workflow builds an `linux/amd64` image and deploys to Cloud Run.
-- Full setup (GCP + GitHub secrets): see `DEPLOY_CLOUD_RUN.md`.
+- Import the repo in Vercel and set the project root directory to `frontend/`.
+- Vercel auto-detects Next.js — no build configuration required.
+- Add environment variables in the Vercel dashboard (see below).
+- Pushes to `main` deploy to production; pull requests get preview deployments.
 
-=======
->>>>>>> 2a409e8d8856b0861c88d07ecc74374303963a22
 ## 📝 Environment Variables
 
 Create a `.env.local` file for local development:

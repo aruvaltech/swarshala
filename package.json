@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "deploy": "cd .. && ./deploy.sh frontend",
+    "deploy": "vercel --prod",
     "list:web-search": "bash scripts/list-indexed-pages.sh",
     "index:web-search": "bash scripts/submit-to-google.sh"
   },
