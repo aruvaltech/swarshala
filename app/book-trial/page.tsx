@@ -126,7 +126,7 @@ export default function BookTrialPage() {
 
       const apiUrl =
         process.env.NEXT_PUBLIC_API_URL || "https://api.swarshala.com";
-      const response = await fetch(`${apiUrl}/api/v1/public/swarshala/leads`, {
+      const response = await fetch(`${apiUrl}/api/v1/public/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(apiPayload),
